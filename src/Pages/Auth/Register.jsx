@@ -16,7 +16,7 @@ const Register = () => {
         const photoURL = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const obj = {displayName, photoURL}
+        // const obj = {displayName, photoURL}
         console.log(displayName,photoURL, email, password)
         const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
         if(regExp.test(password)===false){

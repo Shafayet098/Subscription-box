@@ -3,6 +3,9 @@ import Root from "../Pages/Root/Root";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
+import Cards from "../Pages/Cards/Cards";
+import MyBoxes from "../Pages/my_boxes/MyBoxes";
+import Profile from "../Pages/Profile/Profile";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +23,18 @@ export const router = createBrowserRouter([
             {
                 path: 'register',
                 Component: Register
+            },
+            {
+                path: 'boxes',
+                Component: Cards
+            },
+            {
+                path: 'myboxes',
+                Component: MyBoxes
+            },
+            {
+                path: 'profile',
+                Component: Profile
             }
         ]
     }

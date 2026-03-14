@@ -1,14 +1,14 @@
 import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { AuthContext } from './../../Components/Context/AuthContext';
-import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
+// import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
+import { AuthContext } from '../../Components/Context/AuthContext';
 
 const Register = () => {
-    const {signUp,updateUser} = use(AuthContext)
+    const {signUp,updateUser,user} = use(AuthContext)
     const navigate = useNavigate();
     const [error,setError] = useState('') 
     // const [show, setShow]= useState(false)
-    
+    console.log(user)
 
     const handleSignUp =(e)=>{
         e.preventDefault();
@@ -17,12 +17,19 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const obj = {displayName, photoURL}
-        console.log(displayName,photoURL, email, password)
-        const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
-        if(regExp.test(password)===false){
-            setError("Password must be lest 8 characters, at lest one capital letter, one small letter, one number")
-            return 
-        }
+        // console.log(displayName,photoURL, email, password)
+        // console.log(obj)
+        // const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+        // if(regExp.test(password)===false){
+        //     setError("Password must be lest 8 characters, at lest one capital letter, one small letter, one number")
+        //     return 
+        // }
+
+        // createUserWithEmailAndPassword(auth, email, password)
+        // .then(res=>{console.log(res)})
+        // .catch(err=>{
+        //     console.log(err)
+        // })
 
         signUp(email, password)
         .then(()=>{
@@ -46,9 +53,6 @@ const Register = () => {
                     <form onSubmit={handleSignUp} className="fieldset">
                         <label className="label text-lg">Name</label>
                         <input type="text" className="input w-full" name='name' placeholder="Name" required />
-                        {/* {
-                            nameError && <p className='text-red-400'>{nameError}</p>
-                        } */}
                         <label className="label text-lg">Photo URL</label>
                         <input type="text" className="input w-full" placeholder="Photo URL" name='photo' required />
                         <label className="label text-lg">Email</label>

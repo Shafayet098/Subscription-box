@@ -1,12 +1,12 @@
-// import React, { use, useState } from 'react';
-import { Link } from 'react-router';
-// import { AuthContext } from '../Context/AuthContext';
+import React, { use, useState } from 'react';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from './../../Components/Context/AuthContext';
 import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
 
 const Register = () => {
-    // const {signUp,updateUser} = use(AuthContext)
-    // const navigate = useNavigate();
-    // const [error,setError] = useState('') 
+    const {signUp,updateUser} = use(AuthContext)
+    const navigate = useNavigate();
+    const [error,setError] = useState('') 
     // const [show, setShow]= useState(false)
     
 
@@ -16,27 +16,27 @@ const Register = () => {
         const photoURL = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        // const obj = {displayName, photoURL}
+        const obj = {displayName, photoURL}
         console.log(displayName,photoURL, email, password)
         const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
         if(regExp.test(password)===false){
-            // setError("Password must be lest 8 characters, at lest one capital letter, one small letter, one number")
-            // return 
+            setError("Password must be lest 8 characters, at lest one capital letter, one small letter, one number")
+            return 
         }
 
-        // signUp(email, password)
-        // .then(()=>{
-        //     // console.log(res)
-        //     updateUser(obj).then(()=>{
-        //         console.log("Profile Updated")
-        //         navigate('/')
-        //     }).catch(err=>{
-        //         setError(err)
-        //     })
-        // }).catch(err=>{
-        //     setError(err)
+        signUp(email, password)
+        .then(()=>{
+            // console.log(res)
+            updateUser(obj).then(()=>{
+                console.log("Profile Updated")
+                navigate('/')
+            }).catch(err=>{
+                setError(err)
+            })
+        }).catch(err=>{
+            setError(err)
             
-        // })
+        })
     }
     return (
         <div className='pt-14 flex items-center justify-center'>
@@ -57,7 +57,7 @@ const Register = () => {
                         <input type="password" name='password' className="input w-full" placeholder="Password" required />
                         <button type='submit' className="btn btn-neutral mt-4">Register</button>
                     </form>
-                    <p className='test-red-400'>{'error'}</p>
+                    <p className='test-red-400'>{error}</p>
                     <p className='text-lg'>Don't have an account? <Link to={'/login'} className='underline text-blue-500'>Login</Link></p>
                 </div>
             </div>

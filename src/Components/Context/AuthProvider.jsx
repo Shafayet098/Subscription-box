@@ -1,6 +1,6 @@
 import { AuthContext } from './AuthContext';
 import React, { useEffect, useState } from 'react';
-import { auth } from './../Components/Firebase/Firebase.init';
+import { auth } from './../FireBase/firebase.init';
 import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 
 const AuthProvider = ({children}) => {
@@ -31,7 +31,7 @@ const AuthProvider = ({children}) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-            // console.log("Current User On Auth State Changed: ", currentUser)
+            console.log("Current User On Auth State Changed: ", currentUser)
             setUser(currentUser)
             setLoading(false)
         })

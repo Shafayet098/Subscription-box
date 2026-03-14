@@ -6,19 +6,20 @@ import Register from "../Pages/Auth/Register";
 import Cards from "../Pages/Cards/Cards";
 import MyBoxes from "../Pages/my_boxes/MyBoxes";
 import Profile from "../Pages/Profile/Profile";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         Component: Root,
-        children:[
+        children: [
             {
-                index:true,
+                index: true,
                 Component: Home,
             },
             {
-                path:'login',
-                Component:Login
+                path: 'login',
+                Component: Login
             },
             {
                 path: 'register',
@@ -26,15 +27,25 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'boxes',
-                Component: Cards
+                element:
+                    <PrivateRoute>
+                        <Cards></Cards>
+                    </PrivateRoute>
             },
             {
                 path: 'myboxes',
-                Component: MyBoxes
+                element:
+                    <PrivateRoute>
+                        <MyBoxes></MyBoxes>
+                    </PrivateRoute>
             },
             {
                 path: 'profile',
-                Component: Profile
+                element:
+                    <PrivateRoute>
+                        <Profile></Profile>
+                    </PrivateRoute>
+
             }
         ]
     }

@@ -2,6 +2,7 @@ import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 // import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
 import { AuthContext } from '../../Components/Context/AuthContext';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const {signUp,updateUser,user} = use(AuthContext)
@@ -19,29 +20,29 @@ const Register = () => {
         const obj = {displayName, photoURL}
         // console.log(displayName,photoURL, email, password)
         // console.log(obj)
-        // const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
-        // if(regExp.test(password)===false){
-        //     setError("Password must be lest 8 characters, at lest one capital letter, one small letter, one number")
-        //     return 
-        // }
+        const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+        if(regExp.test(password)===false){
+            setError("Password must be lest 6 characters, at lest one capital letter, one small letter, one number")
+            toast.error(error)
+            return 
+        }
 
-        // createUserWithEmailAndPassword(auth, email, password)
-        // .then(res=>{console.log(res)})
-        // .catch(err=>{
-        //     console.log(err)
-        // })
 
         signUp(email, password)
         .then(()=>{
             // console.log(res)
             updateUser(obj).then(()=>{
                 console.log("Profile Updated")
+                toast.success('Successfully toasted!')
                 navigate('/')
+
             }).catch(err=>{
                 setError(err)
+                toast.error(error)
             })
         }).catch(err=>{
             setError(err)
+            toast.error(error)
             
         })
     }

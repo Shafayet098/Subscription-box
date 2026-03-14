@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import './Nav.css'
+import { AuthContext } from '../Context/AuthContext';
+import profile from './../../assets/profile.png'
 
 const Nav = () => {
+    const { user, logOut } = use(AuthContext);
+    const handleLogOut = () => {
+        logOut().then(() => {
+            console.log("successfully Logged Out")
+        }).catch(err => {
+            console.log(err)
+        })
+    }
     const link = <>
         <NavLink to={'/'}>Home</NavLink>
         <NavLink to={'/profile'}>My Profile</NavLink>
@@ -32,11 +42,20 @@ const Nav = () => {
                         }
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link to={'/login'} >
-                        <button class="inline-flex items-center justify-center  px-8 py-2 text-base font-bold leading-6 text-white bg-primary border border-transparent rounded-full md:w-auto hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">Login
-                        </button>
-                    </Link>
+                <div className="navbar-end space-x-2">
+                    <div className=''>
+                        <img className='rounded-full size-10' 
+                        src={user?.photoURL || profile} alt="" />
+                    </div>
+                    <div>
+                        {
+                            user ? <button onClick={handleLogOut} class="inline-flex items-center justify-center  px-8 py-2 text-base font-bold leading-6 text-white bg-primary border border-transparent rounded-full md:w-auto hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">Logout
+                            </button>
+                                :
+                                <Link to={'/login'} ><button class="inline-flex items-center justify-center  px-8 py-2 text-base font-bold leading-6 text-white bg-primary border border-transparent rounded-full md:w-auto hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">Login
+                                </button></Link>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

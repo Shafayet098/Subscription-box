@@ -7,6 +7,7 @@ import Cards from "../Pages/Cards/Cards";
 import MyBoxes from "../Pages/my_boxes/MyBoxes";
 import Profile from "../Pages/Profile/Profile";
 import PrivateRoute from "./PrivateRoute";
+import Error from "./Error";
 
 export const router = createBrowserRouter([
     {
@@ -46,7 +47,12 @@ export const router = createBrowserRouter([
                         <Profile></Profile>
                     </PrivateRoute>
 
-            }
+            },
+            
         ]
+    },
+    {
+        path:'/*',
+        Component: Error
     }
 ])

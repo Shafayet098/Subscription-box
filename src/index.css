@@ -2,3 +2,10 @@
 @plugin "daisyui" {
   themes: light --default, dark, cupcake;
 }
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: var(--color-slate-600);
+  --color-secondary: var(--color-violet-500);
+  --color-accent: var(--color-slate-800);
+}

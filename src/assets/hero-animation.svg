@@ -1,0 +1,49 @@
+<svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box {
+      animation: float 4s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .sparkle {
+      animation: sparkle 2s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .sparkle2 {
+      animation: sparkle 2s ease-in-out infinite .8s;
+      transform-origin: center;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: .3; transform: scale(.7); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+
+  <ellipse cx="300" cy="340" rx="120" ry="25" fill="#000000" opacity=".12"/>
+
+  <g class="box">
+    <polygon points="200,160 300,130 400,170 300,200" fill="#ff93b0"/>
+    <rect x="285" y="160" width="30" height="150" fill="#ffd47c"/>
+    <polygon points="200,170 300,200 300,320 200,290" fill="#ff6c95"/>
+    <polygon points="300,200 400,170 400,290 300,320" fill="#e8507d"/>
+    <circle cx="300" cy="145" r="10" fill="#ffd47c"/>
+    <ellipse cx="285" cy="135" rx="18" ry="10" fill="#ff5e89"/>
+    <ellipse cx="315" cy="135" rx="18" ry="10" fill="#ff5e89"/>
+  </g>
+
+  <g class="sparkle">
+    <polygon points="120,210 125,225 140,230 125,235 120,250 115,235 100,230 115,225" fill="white"/>
+  </g>
+
+  <g class="sparkle2">
+    <polygon points="500,180 505,195 520,200 505,205 500,220 495,205 480,200 495,195" fill="white"/>
+  </g>
+</svg>

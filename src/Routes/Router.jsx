@@ -8,6 +8,7 @@ import MyBoxes from "../Pages/my_boxes/MyBoxes";
 import Profile from "../Pages/Profile/Profile";
 import PrivateRoute from "./PrivateRoute";
 import Error from "./Error";
+import CardDetails from "../Components/CardDetails/CardDetails";
 
 export const router = createBrowserRouter([
     {
@@ -28,10 +29,11 @@ export const router = createBrowserRouter([
                 Component: Register
             },
             {
-                path: 'boxes',
+                path: 'boxdetails/:id',
+                loader:()=>fetch('/data.json'),
                 element:
                     <PrivateRoute>
-                        <Cards></Cards>
+                        <CardDetails></CardDetails>
                     </PrivateRoute>
             },
             {

@@ -9,3 +9,7 @@
   --color-secondary: var(--color-violet-500);
   --color-accent: var(--color-slate-800);
 }
+
+html {
+  scroll-behavior: smooth;
+}

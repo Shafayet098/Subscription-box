@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from './Slider';
 
-const SliderPreview = () => {
+const SliderPreview = ({cards}) => {
     return (
         <div>
-            <Slider></Slider>
+            <Slider cards={cards}></Slider>
         </div>
     );
 };

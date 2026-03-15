@@ -42,7 +42,7 @@ const Card = ({card}) => {
 
                 {/* View More Button */}
                 <div className="w-full  mt-4 ">
-                    <Link to={`/service/${id}`}>
+                    <Link to={`/boxdetails/${id}`}>
                         <button className="btn btn-primary w-full">
                             View More
                         </button>

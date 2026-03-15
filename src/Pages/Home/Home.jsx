@@ -4,12 +4,17 @@ import Footer from '../../Components/Footer/Footer';
 import { Helmet } from 'react-helmet';
 import SliderPreview from '../../Components/Slider/SliderPreview';
 import SubsCards from '../../Components/SubsCards/SubsCards';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigation } from 'react-router';
 import Works from '../../Components/Works/Works';
 import ChooseUs from '../../Components/ChooseUs/ChooseUs';
+import Loading from '../../Components/Loading/Loading';
 
 const Home = () => {
     const cards = useLoaderData();
+    const navigation = useNavigation()
+    if(navigation.state === 'loading'){
+        return <Loading></Loading>
+    }
     return (
         <>
             <header className='pt-16'>

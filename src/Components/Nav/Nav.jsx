@@ -16,8 +16,6 @@ const Nav = () => {
     const link = <>
         <NavLink to={'/'}>Home</NavLink>
         <NavLink to={'/profile'}>My Profile</NavLink>
-        <NavLink to={'/boxes'}>All Boxes</NavLink>
-        <NavLink to={'/myboxes'}>My Boxes</NavLink>
     </>
     return (
         <div className=''>

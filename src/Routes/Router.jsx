@@ -9,6 +9,7 @@ import Profile from "../Pages/Profile/Profile";
 import PrivateRoute from "./PrivateRoute";
 import Error from "./Error";
 import CardDetails from "../Components/CardDetails/CardDetails";
+import ForgetPassword from "../Pages/Auth/ForgetPassword";
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path: 'register',
                 Component: Register
+            },
+            {
+                path:'login/forgetpassword',
+                Component: ForgetPassword
             },
             {
                 path: 'boxdetails/:id',

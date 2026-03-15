@@ -53,7 +53,11 @@ const Login = () => {
                         <input type="email" className="input w-full" placeholder="Email" name='email' required />
                         <label className="label text-lg">Password</label>
                         <input type="password" className="input w-full" placeholder="Password" name='password' required />
-                        <div><a className="link link-hover text-md">Forgot password?</a></div>
+                        <div>
+                           <Link to={'/login/forgetpassword'}>
+                                 <p className="link link-hover text-md">Forgot password?</p>
+                           </Link>
+                        </div>
                         <button className="btn btn-neutral mt-4">Login</button>
                     </form>
                     <p className='text-red-400'>{error}</p>

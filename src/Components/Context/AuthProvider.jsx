@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { auth } from '../FireBase/firebase.init';
 import { AuthContext } from './AuthContext';
 
@@ -29,6 +29,9 @@ const AuthProvider = ({children}) => {
     const signInWIthGithub=()=>{
         return signInWithPopup(auth, providerGitHub)
     }
+    const forgetpassword=(email)=>{
+        return sendPasswordResetEmail(auth, email)
+    }
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -49,7 +52,8 @@ const AuthProvider = ({children}) => {
         loading,
         updateUser,
         signInWithGoogle,
-        signInWIthGithub
+        signInWIthGithub,
+        forgetpassword
 
     }
     return (

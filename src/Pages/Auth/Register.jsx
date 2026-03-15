@@ -3,51 +3,55 @@ import { Link, useNavigate } from 'react-router';
 // import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
 import { AuthContext } from '../../Components/Context/AuthContext';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
-    const {signUp,updateUser,user} = use(AuthContext)
+    const { signUp, updateUser, user } = use(AuthContext)
     const navigate = useNavigate();
-    const [error,setError] = useState('') 
+    const [error, setError] = useState('')
     // const [show, setShow]= useState(false)
     console.log(user)
 
-    const handleSignUp =(e)=>{
+    const handleSignUp = (e) => {
         e.preventDefault();
         const displayName = e.target.name.value;
         const photoURL = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const obj = {displayName, photoURL}
+        const obj = { displayName, photoURL }
         // console.log(displayName,photoURL, email, password)
         // console.log(obj)
         const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
-        if(regExp.test(password)===false){
+        if (regExp.test(password) === false) {
             setError("Password must be lest 6 characters, at lest one capital letter, one small letter, one number")
             toast.error(error)
-            return 
+            return
         }
 
 
         signUp(email, password)
-        .then(()=>{
-            // console.log(res)
-            updateUser(obj).then(()=>{
-                console.log("Profile Updated")
-                toast.success('Successfully toasted!')
-                navigate('/')
+            .then(() => {
+                // console.log(res)
+                updateUser(obj).then(() => {
+                    console.log("Profile Updated")
+                    toast.success('Successfully toasted!')
+                    navigate('/')
 
-            }).catch(err=>{
+                }).catch(err => {
+                    setError(err)
+                    toast.error(error)
+                })
+            }).catch(err => {
                 setError(err)
                 toast.error(error)
+
             })
-        }).catch(err=>{
-            setError(err)
-            toast.error(error)
-            
-        })
     }
     return (
         <div className='pt-14 flex items-center justify-center'>
+            <Helmet>
+                <title>Subscribe Box | Register</title>
+            </Helmet>
             <div className="card bg-base-100 w-full max-w-sm sm:max-w-md shrink-0 shadow-2xl  mx-auto mt-4 pt-4">
                 <h1 className='text-center text-2xl font-semibold'>Register Your Account</h1>
                 <div className="card-body">

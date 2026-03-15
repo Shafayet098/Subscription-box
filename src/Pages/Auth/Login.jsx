@@ -2,6 +2,7 @@ import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from './../../Components/Context/AuthContext';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const { signIn,signInWithGoogle } = use(AuthContext);
@@ -41,6 +42,9 @@ const Login = () => {
     }
     return (
         <div className='pt-20'>
+             <Helmet>
+                <title>Subscribe Box | Login</title>
+            </Helmet>
             <div className="card bg-base-100 w-full max-w-sm md:max-w-md shrink-0 shadow-2xl  mx-auto pt-6">
                 <h1 className="text-center text-3xl font-bold">LogIn now!</h1>
                 <div className="card-body">

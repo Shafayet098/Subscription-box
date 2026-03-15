@@ -44,7 +44,7 @@ const Nav = () => {
                 </div>
                 <div className="navbar-end space-x-2">
                     <div className=''>
-                        <img className='rounded-full size-10' 
+                        <img className='rounded-full size-10' title={user?.email} 
                         src={user?.photoURL || profile} alt="" />
                     </div>
                     <div>

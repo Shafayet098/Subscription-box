@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Smart Home Box",
+    "thumbnail": "https://images.unsplash.com/photo-1558002038-1055907df827?w=600",
+    "banner": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200",
+    "frequency": "Yearly",
+    "price": 199.99,
+    "description": "Transform your home into a smart home with curated smart devices, automation tools, and IoT gadgets.",
+    "tech_category": "Smart Home",
+    "features": [
+      "Smart Home Devices",
+      "Home Automation Tools",
+      "IoT Gadgets"
+    ],
+    "subscription_benefits": [
+      "Discount on Smart Home Purchases",
+      "Exclusive Smart Home Tutorials",
+      "Early Access to New Devices"
+    ],
+    "ratings": 4.8,
+    "number_of_reviews": 315
+  },
+  {
+    "id": 2,
+    "name": "Gaming Gear Box",
+    "thumbnail": "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600",
+    "banner": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200",
+    "frequency": "Monthly",
+    "price": 49.99,
+    "description": "A premium box filled with gaming accessories, collectibles, and the latest gaming gadgets.",
+    "tech_category": "Gaming",
+    "features": [
+      "Gaming Mouse & Keyboard",
+      "Gaming Accessories",
+      "Exclusive Gamer Merchandise"
+    ],
+    "subscription_benefits": [
+      "Discount on Gaming Gear",
+      "Early Game Releases",
+      "Exclusive Gamer Community"
+    ],
+    "ratings": 4.7,
+    "number_of_reviews": 245
+  },
+  {
+    "id": 3,
+    "name": "AI & Robotics Box",
+    "thumbnail": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600",
+    "banner": "https://images.unsplash.com/photo-1562408590-e32931084e23?w=1200",
+    "frequency": "Monthly",
+    "price": 59.99,
+    "description": "Explore artificial intelligence and robotics through fun DIY kits and smart learning tools.",
+    "tech_category": "Artificial Intelligence",
+    "features": [
+      "Robotics Kits",
+      "AI Learning Tools",
+      "Hands-on Projects"
+    ],
+    "subscription_benefits": [
+      "Exclusive AI Tutorials",
+      "Developer Community Access",
+      "Discount on Robotics Hardware"
+    ],
+    "ratings": 4.9,
+    "number_of_reviews": 180
+  },
+  {
+    "id": 4,
+    "name": "Cyber Security Box",
+    "thumbnail": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600",
+    "banner": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200",
+    "frequency": "Monthly",
+    "price": 39.99,
+    "description": "Boost your cyber security skills with security tools, ethical hacking kits, and guides.",
+    "tech_category": "Cyber Security",
+    "features": [
+      "Security Testing Tools",
+      "Ethical Hacking Kits",
+      "Cyber Security Guides"
+    ],
+    "subscription_benefits": [
+      "Exclusive Security Tutorials",
+      "Community Access",
+      "Discount on Security Tools"
+    ],
+    "ratings": 4.6,
+    "number_of_reviews": 220
+  },
+  {
+    "id": 5,
+    "name": "Virtual Reality Box",
+    "thumbnail": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=600",
+    "banner": "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=1200",
+    "frequency": "Quarterly",
+    "price": 89.99,
+    "description": "Step into immersive worlds with VR gadgets, accessories, and exclusive VR experiences.",
+    "tech_category": "Virtual Reality",
+    "features": [
+      "VR Accessories",
+      "VR Games",
+      "Immersive Gadgets"
+    ],
+    "subscription_benefits": [
+      "Exclusive VR Content",
+      "Early Access to VR Products",
+      "Discount on VR Gear"
+    ],
+    "ratings": 4.7,
+    "number_of_reviews": 160
+  },
+  {
+    "id": 6,
+    "name": "Developer Tools Box",
+    "thumbnail": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600",
+    "banner": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200",
+    "frequency": "Monthly",
+    "price": 29.99,
+    "description": "A perfect subscription for developers with coding gadgets, learning resources, and tools.",
+    "tech_category": "Software Development",
+    "features": [
+      "Coding Gadgets",
+      "Developer Tools",
+      "Learning Resources"
+    ],
+    "subscription_benefits": [
+      "Premium Coding Tutorials",
+      "Access to Developer Community",
+      "Discount on Dev Software"
+    ],
+    "ratings": 4.8,
+    "number_of_reviews": 290
+  }
+]
